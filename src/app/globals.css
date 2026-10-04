@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body { @apply bg-canvas font-sans text-body antialiased; text-rendering: optimizeLegibility; }
+  h1, h2, h3, h4 { @apply text-ink; }
+  :focus-visible { outline: 3px solid #0B6CC0; outline-offset: 3px; border-radius: 6px; }
+  ::selection { background: #E8F1FA; color: #14202B; }
+}
+
+@layer components {
+  .page-x { @apply mx-auto w-full max-w-page px-4 sm:px-6 lg:px-10; }
+  .eyebrow { @apply text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-action-ink; }
+  .card { @apply rounded-card border border-line bg-canvas; }
+  .chip { @apply inline-flex min-h-[42px] items-center gap-2 rounded-full border border-line-strong bg-canvas px-4 text-[0.95rem] text-ink transition-colors duration-150 hover:border-soft; }
+  .chip[aria-pressed="true"], .chip[aria-checked="true"] { @apply border-action bg-action-tint font-semibold text-action-ink; }
+  .demo-tag { @apply inline-flex shrink-0 whitespace-nowrap items-center gap-1.5 rounded-md border border-line bg-paper px-2 py-0.5 text-[0.72rem] font-medium text-soft; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
