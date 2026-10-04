@@ -32,6 +32,9 @@ export function Hero() {
         </div>
         <div id="demo" className="scroll-mt-24">
           <HeroDemo />
+          <p className="mt-4 text-center text-[0.92rem] text-soft">
+            <Link href="/bimora" className="font-semibold text-action-ink underline-offset-4 hover:underline" onClick={() => track("hero_cta_clicked", { cta: "try_demo", location: "hero" })}>Try Bimora</Link> with a demo household, tasks and renewals included.
+          </p>
         </div>
       </div>
     </section>
