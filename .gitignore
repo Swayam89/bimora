@@ -1,0 +1,7 @@
+node_modules
+.next
+out
+.env*.local
+*.tsbuildinfo
+public/fonts
+package-lock.json
